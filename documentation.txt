@@ -1,0 +1,100 @@
+This project is an AI content generator named  AI Content Generator. It uses ChatGPT integration and is built on a MERN stack (MongoDB, Express.js, React.js, and Node.js) foundation.
+
+Here are the key features:
+/ Free tier with 5 API requests per month and trial period with 1000 credits
+/ Paid plans with more credits
+/ User registration and login
+/ Content generation with credit usage tracking
+/ Payment integration with Stripe
+
+we use postman to test API 
+
+*command to run backend is <NPM RUN SERVER>
+
+
+                     <BACKEND>
+
+*FOLDERS AND FILE SETUP
+1.create backend folder
+2.initilase project 
+3.npm i express mongoose dotenv jsonwebtoken bcryptjs
+4.npm i nodemon -D
+5.configure package.json
+    main:server.js
+    start:node server.js
+6.folders creation
+7.we use MVC design pattern so create <controllers> folder and <models> folder
+8.create <routes>,<utils>,<middlewares> folders
+9.now create <server.js> file in backend folder not in any other
+
++
+/WE HAVE TO DEFINE SCHEMA IN <MODELS> FOLDERS AND THEN CONTROL EACH SCHEMA WITH EACH CORRESPONDING FILE IN <CONTROLLERS>
+  FODLER IN EACH CONTROLLER FILE WE NEED TO IMPORT ITS CORRESPONDING SCHEMA FILE AND <ROUTES> FOLDER CONATINS SAME NUMBER OF FILES AS MODELS AND CONTROLLERS 
+  TO ADD ROUTES FOR EACH CONTROLLER WE NEED TO CREATE CORRESPONDIN ROUTE FILE AND IMPORT THAT CONTROLLER FILE IN THAT ROUTE
+  SO THE FLOW IS 
+  *create file in <models> folder to define schema 
+  *import that model file in controller file and controller file contains code to deal with that schema
+  *now import this controller file in corresponding route file and route files contain routes to each controller 
+  *now import these routes in server.js and save that and run that
+/
+
+
+*<server.js> file
+1.write code into it and start the server
+
+*<models> folder -data modelling
+1.model files must have upperletter at starting
+2.create files called <User.js>,<Payment.js>,<ContentHistory.js>
+3.open User.js file and write user schema 
+4.same for payment and contentHistory files
+5.models folder is completed Here
+
+*<controllers> folder
+1.lets create <userctrl.js> file 
+    here we focus on authentication part
+    include parts like registration,login,logout,profile and check user Auth status
+    and write code into each field
+2. in this file we have 5 controllers for user only ao we export them seperate
+
+*<routes> folder
+1.create file called <usersRouter.js>
+2.now import usercontroller file here and add routes to them to acess
+3.now we have to use this inside the server.js file
+
+*MONGODB CONNECTION
+1.open utils folder and create a file called connectDb.js
+2.every time we write this connection to mongodb code in server.js only 
+3.but now fpr that we created an extra file in utils 
+4.write the code properly 
+5.import this file in server.js file
+
+*<MIDDLEWARES> folder
+1.create errorMiddleware.js file and writer error code
+2.now go to server.js and import this file
+
+*<userctrl.js>
+1.now lets implement login funcitonality
+2.in login we have to implement authentecation
+3.Here we use COOKIE BASED AUTHENTICATION 
+    i.e we are going to save the token in cookie of user
+    upon user login we will generate a token
+    Now we will save this token in a cookie
+
+1.lets implement profile functionlaity
+2.but user profile is sensitive so one can see it inly after login
+3.to implement this security we ise isAuthenticated middlewares
+4.in terminal npm cookie-parser
+
+
+*<OPENAI> API KEY BUT WE GONNA USE GEMINI API
+1.npm install @google/generative-ai
+2.npm i axios
+
+
+
+
+
+
+
+
+
