@@ -11,7 +11,7 @@ import { AuthProvider } from "./AuthContext/AuthContext";
 
 //!STRIPE CONFIGURATION
 const stripePromise = loadStripe(
-  "pk_test_51PUsUI03SRy0JQ0t5M8hDpj57Ffa7pIDnq08xVFoNT1YcEo0BcDYhI806DT5rMuttzPJCCRK6j0k0Pts7TEbgfrx00ZGMrZpwr"
+  ""
 );
 
 const options = {
